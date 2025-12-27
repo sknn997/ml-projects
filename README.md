@@ -87,6 +87,9 @@ The trained model achieves high prediction accuracy (~90%) depending on preproce
 
 The results show that machine learning can be effectively used for early heart disease risk assessment.
 
+<img width="959" height="414" alt="image" src="https://github.com/user-attachments/assets/381b00eb-4786-47be-9ce7-205a804e68d7" />
+
+
 📂 Repository Structure
 ml-projects/
 │
