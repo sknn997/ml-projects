@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .login {
+            background-color: #fff;
+            padding: 25px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        .login h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 16px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h1>Heart Disease Prediction</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <label for="age">Age</label>
+            <input type="text" name="age" placeholder="Enter age" required>
+
+            <label for="sex">Sex (0 = Female, 1 = Male)</label>
+            <input type="text" name="sex" placeholder="0 or 1" required>
+
+            <label for="cp">Chest Pain Type (0–3)</label>
+            <input type="text" name="cp" placeholder="Chest pain type" required>
+
+            <label for="trestbps">Resting Blood Pressure</label>
+            <input type="text" name="trestbps" placeholder="Resting blood pressure (mm Hg)" required>
+
+            <label for="chol">Serum Cholesterol</label>
+            <input type="text" name="chol" placeholder="Cholesterol (mg/dl)" required>
+
+            <label for="fbs">Fasting Blood Sugar > 120 mg/dl (1 = true, 0 = false)</label>
+            <input type="text" name="fbs" placeholder="1 or 0" required>
+
+            <label for="restecg">Resting ECG Results (0–2)</label>
+            <input type="text" name="restecg" placeholder="ECG result" required>
+
+            <label for="thalach">Maximum Heart Rate Achieved</label>
+            <input type="text" name="thalach" placeholder="Max heart rate" required>
+
+            <label for="exang">Exercise Induced Angina (1 = Yes, 0 = No)</label>
+            <input type="text" name="exang" placeholder="1 or 0" required>
+
+            <label for="oldpeak">Oldpeak (ST depression)</label>
+            <input type="text" name="oldpeak" placeholder="ST depression value" required>
+
+            <label for="slope">Slope of Peak Exercise ST Segment (0–2)</label>
+            <input type="text" name="slope" placeholder="Slope value" required>
+
+            <label for="ca">Number of Major Vessels Colored by Fluoroscopy (0–3)</label>
+            <input type="text" name="ca" placeholder="Number of vessels" required>
+
+            <label for="thal">Thalassemia (1 = Normal, 2 = Fixed Defect, 3 = Reversible Defect)</label>
+            <input type="text" name="thal" placeholder="Thal value" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if result is not none %}
+        <h2>Prediction Result: {{ result }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
