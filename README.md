@@ -90,8 +90,8 @@ The results show that machine learning can be effectively used for early heart d
 📂 Repository Structure
 ml-projects/
 │
-├── Heart_disease_prediction_1.ipynb
-├── Heart_disease_prediction_1sushil.ipynb
+├── project mod 1(dataset and eda and preprocessing).ipynb
+├── project mod 2(feature scaling,selection and model).ipynb
 |-- app.py
 ├── README.md
 
